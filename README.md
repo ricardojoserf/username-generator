@@ -14,3 +14,10 @@ Formats:
 - 6 - Name + Initial2 + Surname - **homerjsimpson**
 - 7 - Name1 + Name2 + Surname - **homerjaysimpson**
 - 8 - Name + Surname + Sufix - **homersimpsonb**
+
+You can optionally add (or skip by pressing enter):
+
+- A mail domain - **hsimpson@springfield.es**
+- A domain - **SPRINGFIELD\hsimpson**
+
+Default output file is *results.txt* but you can specify other file
