@@ -13,7 +13,7 @@ def main():
 	format_text += "6) homerjsimpson" + "\n"
 	format_text += "7) homerjaysimpson" + "\n"
 	format_text += "8) homersimpsonb" + "\n"
-	format_text += ""
+	format_text += "Option: "
 	format_option = input(format_text)
 
 	mail_domain = input("Mail domain (example: ...@domain.com) [Default: none]: ")
