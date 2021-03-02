@@ -4,21 +4,23 @@ import string
 
 
 def main():
-	mail_domain = input("Mail domain (example: ...@domain.com) [Default: none]: ")
-	domain =      input("Domain (example: domain\\...) [Default: none]: ") if mail_domain == '' else None
-
 	format_text = "Choose username format:" + "\n"
-	format_text += "1) gwashington" + "\n"
-	format_text += "2) g.washington" + "\n"
-	format_text += "3) georgewashington" + "\n"
-	format_text += "4) george.washington" + "\n"
-	format_text += ""
+	format_text += "1) hsimpson" + "\n"
+	format_text += "2) h.simpson" + "\n"
+	format_text += "3) homersimpson" + "\n"
+	format_text += "4) homer.simpson" + "\n"
+	format_text += "5) hjsimpson" + "\n"
+	format_text += "6) homerjsimpson" + "\n"
+	format_text += "7) homerjaysimpson" + "\n"
+	format_text += "8) homersimpsonb" + "\n"
 	format_text += ""
 	format_option = input(format_text)
 
+	mail_domain = input("Mail domain (example: ...@domain.com) [Default: none]: ")
+	domain =      input("Domain (example: domain\\...) [Default: none]: ") if mail_domain == '' else None
+
 	names_,surnames_ = None, None
-	
-	if format_option == "3" or format_option == "4":
+	if format_option == "3" or format_option == "4" or format_option == "6" or format_option == "7" or format_option == "8":
 		names = input("Names file path: ")
 		if not os.path.isfile(names):
 			print("Error: Invalid names file path")
@@ -59,6 +61,30 @@ def get_usernames(format_option, names_, surnames_):
 		for s in surnames_:
 			for n in names_:
 				combinations.append(n+"."+s)
+
+	elif format_option == "5":
+		for s in surnames_:
+			for l2 in letters_:
+				for l in letters_:
+					combinations.append(l+l2+s)
+
+	elif format_option == "6":
+		for s in surnames_:
+			for l in letters_:
+				for n in names_:
+					combinations.append(n+l+s)
+
+	elif format_option == "7":
+		for s in surnames_:
+			for n2 in names_:
+				for n in names_:
+					combinations.append(n+n2+s)
+
+	elif format_option == "8":
+		for s in surnames_:
+			for n in names_:
+				for l in letters_:
+					combinations.append(n+s+l)
 
 	else:
 		print("Invalid option")
